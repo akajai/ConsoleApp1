@@ -12,16 +12,17 @@ public class ExternalUserService
     
     private readonly ILogger<ExternalUserService> _logger;
 
-    private const string BaseUrl = "https://reqres.in/api"; // Can inject via options
+    private  string BaseUrl = "https://reqres.in/api"; // Can inject via options
 
     
-    public ExternalUserService(HttpClient httpClient, IMemoryCache cache, ILogger<ExternalUserService> logger)
+    public ExternalUserService(HttpClient httpClient, IMemoryCache cache, ILogger<ExternalUserService> logger,URLConfig urlConfig)
     {
         _httpClient = httpClient;
         _cache = cache;
         _logger = logger;
+        BaseUrl = urlConfig.ApiUrl;
         // Add the x-api-key header to all requests
-        _httpClient.DefaultRequestHeaders.Add("x-api-key", "reqres-free-v1");
+        _httpClient.DefaultRequestHeaders.Add("x-api-key", urlConfig.ApiKey);
 
     }
 
