@@ -1,14 +1,23 @@
 namespace ClassLibrary1;
 
-public class User
+public class RootObjectUser
 {
-        public int Id { get; set; }
-
-        public string Email { get; set; } = string.Empty;
-
-        public string FirstName { get; set; } = string.Empty;
-
-        public string LastName { get; set; } = string.Empty;
-
-        public string Avatar { get; set; } = string.Empty;
+    public Data data { get; set; }
+    public Support support { get; set; }
 }
+//
+// public class Data
+// {
+//     public int id { get; set; }
+//     public string email { get; set; }
+//     public string first_name { get; set; }
+//     public string last_name { get; set; }
+//     public string avatar { get; set; }
+// }
+//
+// public class Support
+// {
+//     public string url { get; set; }
+//     public string text { get; set; }
+// }
+
